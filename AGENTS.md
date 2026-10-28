@@ -2,7 +2,7 @@ Avoid code comments except for TODOs or essential context.
 
 This is a React + TypeScript + Vite static frontend, deployed through Cloudflare Workers static assets. Use npm and plain CSS. Keep the implementation small; do not add application infrastructure for the auction concept unless requested.
 
-Preserve the five steps in `src/App.tsx` verbatim, including lowercase wording and emojis, unless a copy change is requested. Keep the browser title exactly `shred.art`. Themes follow the system setting through CSS; preserve readable contrast, visible focus, and zoom. Keep the page static: no entrance animations or animated hover effects.
+Preserve the five numbered steps in `src/App.tsx` verbatim, including lowercase wording, unless a copy change is requested. Keep the browser title exactly `shred.art`. Themes follow the system setting through CSS; preserve readable contrast, visible focus, and zoom. Keep the page static: no entrance animations or animated hover effects.
 
 Use the neutral system sans-serif stack and the same white / `#131313` backgrounds as mons.shop and mons.link. Keep `assets/source/logo.png` byte-for-byte intact. Generate derivatives with `npm run assets`; never substitute generated artwork for the original. Header images must use the small WebP variants, and the original must remain outside the deployed asset directory. The page should not download fonts. Inter is only a development dependency for generating the social image; retain its font license.
 
