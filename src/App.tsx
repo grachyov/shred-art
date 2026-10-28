@@ -3,7 +3,7 @@ import PostalAddress from "./PostalAddress";
 const steps = [
   "an artist sends something in a letter.",
   "we scan and list it for auction on ethereum.",
-  "the winner gets an nft, and the artist gets 77.7%.",
+  "the winner gets an nft, and the artist gets 77%.",
   "if the buyer enters an address, we forward them the letter.",
   "otherwise, we shred it after 30 days, along with the nft.",
 ];
