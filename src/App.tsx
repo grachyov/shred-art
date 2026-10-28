@@ -29,13 +29,32 @@ export default function App() {
         </div>
       </header>
       <main className="page-content">
-        <ol className="steps" role="list">
-          {steps.map((step) => (
-            <li className="steps__item" key={step}>
-              <p>{step}</p>
-            </li>
-          ))}
-        </ol>
+        <div className="page-copy">
+          <ol className="steps" role="list">
+            {steps.map((step) => (
+              <li className="steps__item" key={step}>
+                <p>{step}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+        <picture className="paper-pile">
+          <source
+            media="(prefers-color-scheme: dark)"
+            srcSet="/paper-pile-dark-800.webp 800w, /paper-pile-dark-1600.webp 1600w, /paper-pile-dark-2400.webp 2400w"
+            sizes="min(100vw, clamp(720px, 96svh, 1120px))"
+          />
+          <img
+            src="/paper-pile-light-800.webp"
+            srcSet="/paper-pile-light-800.webp 800w, /paper-pile-light-1600.webp 1600w, /paper-pile-light-2400.webp 2400w"
+            sizes="min(100vw, clamp(720px, 96svh, 1120px))"
+            width="2400"
+            height="860"
+            alt=""
+            loading="lazy"
+            decoding="async"
+          />
+        </picture>
       </main>
     </>
   );

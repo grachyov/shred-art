@@ -46,6 +46,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
 ::selection {
   background: var(--page-foreground);
   color: var(--page-background);
@@ -61,7 +68,7 @@ body {
 }
 
 .site-header__inner,
-.page-content {
+.page-copy {
   width: min(100%, 960px);
   margin-inline: auto;
   padding-inline: var(--page-gutter);
@@ -102,8 +109,30 @@ body {
 }
 
 .page-content {
-  padding-top: clamp(56px, 9vw, 104px);
-  padding-bottom: clamp(64px, 10vw, 120px);
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: clamp(40px, min(8vw, 5svh), 80px);
+  min-width: 0;
+  padding-top: clamp(56px, min(9vw, 6svh), 104px);
+}
+
+.page-copy {
+  flex: none;
+}
+
+.paper-pile {
+  display: block;
+  flex: none;
+  width: min(100%, clamp(720px, 96svh, 1120px));
+  margin-top: auto;
+  margin-inline: auto;
+}
+
+.paper-pile img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .steps {

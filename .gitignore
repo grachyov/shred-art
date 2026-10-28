@@ -10,6 +10,7 @@ coverage/
 .nyc_output/
 test-results/
 playwright-report/
+assets/renders/
 
 # Local caches and Cloudflare state
 .cache/
