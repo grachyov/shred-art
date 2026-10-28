@@ -1,9 +1,11 @@
+import PostalAddress from "./PostalAddress";
+
 const steps = [
-  "an artist sends something in a letter",
-  "it gets automatically scanned and listed for an eth auction",
-  "the highest bidder gets an nft",
-  "if the buyer enters an address, the letter gets forwarded to them",
-  "otherwise, it gets shredded after 30 days, along with the nft.",
+  "an artist sends something in a letter.",
+  "we scan and list it for auction on ethereum.",
+  "the winner gets an nft, and the artist gets 70%.",
+  "if the buyer enters an address, we forward them the letter.",
+  "otherwise, we shred it after 30 days, along with the nft.",
 ];
 
 export default function App() {
@@ -55,6 +57,9 @@ export default function App() {
               </li>
             ))}
           </ol>
+        </div>
+        <div className="address-container">
+          <PostalAddress />
         </div>
         <picture className="paper-pile">
           <source
