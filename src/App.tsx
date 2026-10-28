@@ -1,9 +1,18 @@
 const steps = [
-  "an artist sends something in a letter ✉️",
-  "it gets automatically scanned and listed for an eth auction 🖼️",
-  "the highest bidder gets an nft 🤝",
-  "if the buyer enters an address, the letter gets forwarded to them 📬",
-  "otherwise, it gets shredded after 30 days, along with the nft 🔪",
+  { emoji: "✉️", text: "an artist sends something in a letter" },
+  {
+    emoji: "🖼️",
+    text: "it gets automatically scanned and listed for an eth auction",
+  },
+  { emoji: "🤝", text: "the highest bidder gets an nft" },
+  {
+    emoji: "📬",
+    text: "if the buyer enters an address, the letter gets forwarded to them",
+  },
+  {
+    emoji: "🔪",
+    text: "otherwise, it gets shredded after 30 days, along with the nft",
+  },
 ];
 
 export default function App() {
@@ -33,8 +42,11 @@ export default function App() {
         <div className="page-copy">
           <ol className="steps" role="list">
             {steps.map((step) => (
-              <li className="steps__item" key={step}>
-                <p>{step}</p>
+              <li className="steps__item" key={step.text}>
+                <span className="steps__emoji" aria-hidden="true">
+                  {step.emoji}
+                </span>
+                <p>{step.text}</p>
               </li>
             ))}
           </ol>
