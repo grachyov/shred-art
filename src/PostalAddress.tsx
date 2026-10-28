@@ -3,17 +3,18 @@ import { useEffect, useId, useRef, useState } from "react";
 export const postalAddress =
   "Ivan G.\n1606 Headway Cir STE 9721\nAustin, TX 78754";
 
-type CopyStatus = "idle" | "copying" | "copied" | "selected" | "failed";
+type CopyStatus = "idle" | "copying" | "copied";
 
 export default function PostalAddress() {
   const statusId = useId();
   const addressRef = useRef<HTMLElement>(null);
   const [status, setStatus] = useState<CopyStatus>("idle");
+  const [message, setMessage] = useState("");
 
   useEffect(() => {
     if (status !== "copied") return;
 
-    const timeout = window.setTimeout(() => setStatus("idle"), 2500);
+    const timeout = window.setTimeout(() => setStatus("idle"), 600);
     return () => window.clearTimeout(timeout);
   }, [status]);
 
@@ -21,10 +22,12 @@ export default function PostalAddress() {
     if (status === "copying") return;
 
     setStatus("copying");
+    setMessage("");
 
     try {
       await navigator.clipboard.writeText(postalAddress);
       setStatus("copied");
+      setMessage("Address copied.");
     } catch {
       const selection = window.getSelection();
 
@@ -33,21 +36,18 @@ export default function PostalAddress() {
         range.selectNodeContents(addressRef.current);
         selection.removeAllRanges();
         selection.addRange(range);
-        setStatus("selected");
+        setMessage(
+          "Address selected. Use your device’s copy command to copy it.",
+        );
       } else {
-        setStatus("failed");
+        setMessage(
+          "Couldn’t copy automatically. Select the address to copy it.",
+        );
       }
+
+      setStatus("idle");
     }
   }
-
-  const message =
-    status === "copied"
-      ? "address copied."
-      : status === "selected"
-        ? "address selected. use your device’s copy command to copy it."
-        : status === "failed"
-          ? "couldn’t copy automatically. select the address to copy it."
-          : "";
 
   return (
     <section className="postal-address" aria-label="mailing address">
@@ -93,11 +93,7 @@ export default function PostalAddress() {
         </svg>
       </button>
       <p
-        className={`postal-address__status${
-          status === "selected" || status === "failed"
-            ? " postal-address__status--error"
-            : ""
-        }`}
+        className="postal-address__status"
         id={statusId}
         role="status"
         aria-atomic="true"
