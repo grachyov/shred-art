@@ -12,7 +12,7 @@ npm ci
 npm run dev
 ```
 
-The stack is React 19, TypeScript 6, Vite 8, and plain CSS. Barlow Condensed is self-hosted through the bundled Latin WOFF2 files. Light and dark mode follow the device setting, including changes while the page is open.
+The stack is React 19, TypeScript 6, Vite 8, and plain CSS. Typography uses the platform's neutral system sans-serif without downloading fonts. Light and dark mode follow the device setting, using white and `#131313` backgrounds to match mons.shop and mons.link. The page stays static, with no entrance animations or animated hover effects.
 
 | Command                | Purpose                                             |
 | ---------------------- | --------------------------------------------------- |
@@ -30,11 +30,11 @@ The stack is React 19, TypeScript 6, Vite 8, and plain CSS. Barlow Condensed is 
 
 ## Content and assets
 
-The four steps in `src/App.tsx` are intentional verbatim copy, including lowercase wording and “smth.” The page has no additional marketing sections or actions.
+The four steps in `src/App.tsx` are intentional copy, including lowercase wording and “something.” The page has no additional marketing sections or actions.
 
 Keep `assets/source/logo.png` unchanged: it is the original 2048px transparent PNG. `scripts/generate-assets.mjs` derives the small transparent WebP header images, PNG/ICO favicons, opaque touch/app icons, a safely padded maskable icon, and the social image. These generated files are committed under `public/` so a normal build needs no image processing. Run `npm run assets` after intentionally updating the source or generation settings, and commit the derived files together.
 
-The original is outside `public/` and never bundled. Font license text is retained at `assets/fonts/OFL.txt`. Only the 500 and 700 Latin WOFF2 font files are used by the page.
+The original is outside `public/` and never bundled. Inter is used only to generate the social image, with its font license retained at `assets/fonts/OFL.txt`. No font files are included in the deployed page.
 
 ## Deployment
 

@@ -8,8 +8,8 @@ import sharp from "sharp";
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const outputDirectory = resolve(root, "public");
 const source = resolve(root, "assets/source/logo.png");
-const background = "#111111";
-const foreground = "#f4f2ed";
+const background = "#131313";
+const foreground = "#ffffff";
 const transparent = { r: 0, g: 0, b: 0, alpha: 0 };
 
 await mkdir(outputDirectory, { recursive: true });
@@ -136,7 +136,7 @@ await save(
 const fontBuffer = await readFile(
   resolve(
     root,
-    "node_modules/@fontsource/barlow-condensed/files/barlow-condensed-latin-700-normal.woff",
+    "node_modules/@fontsource/inter/files/inter-latin-700-normal.woff",
   ),
 );
 const font = opentype.parse(
@@ -145,7 +145,7 @@ const font = opentype.parse(
     fontBuffer.byteOffset + fontBuffer.byteLength,
   ),
 );
-const wordmark = font.getPath("shred.art", 0, 0, 168);
+const wordmark = font.getPath("shred.art", 0, 0, 136);
 wordmark.fill = foreground;
 const bounds = wordmark.getBoundingBox();
 const wordmarkWidth = bounds.x2 - bounds.x1;

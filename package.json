@@ -32,12 +32,12 @@
   },
   "homepage": "https://shred.art",
   "dependencies": {
-    "@fontsource/barlow-condensed": "^5.2.6",
     "react": "^19.3.0",
     "react-dom": "^19.3.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.5",
+    "@fontsource/inter": "5.3.0",
     "@types/node": "^24.0.0",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",

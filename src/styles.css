@@ -1,11 +1,19 @@
 :root {
-  font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif;
   font-synthesis: none;
-  font-weight: 500;
+  font-weight: 400;
   color-scheme: light;
-  --page-background: #f4f2ed;
-  --page-foreground: #111111;
-  --header-background: rgb(244 242 237 / 80%);
+  --page-background: #ffffff;
+  --page-foreground: #1d1d1f;
+  --header-background: rgb(255 255 255 / 80%);
   --page-gutter: clamp(24px, 5vw, 48px);
   background: var(--page-background);
   color: var(--page-foreground);
@@ -14,9 +22,9 @@
 @media (prefers-color-scheme: dark) {
   :root {
     color-scheme: dark;
-    --page-background: #111111;
-    --page-foreground: #f4f2ed;
-    --header-background: rgb(17 17 17 / 76%);
+    --page-background: #131313;
+    --page-foreground: #f5f5f7;
+    --header-background: rgb(19 19 19 / 72%);
   }
 }
 
@@ -65,10 +73,10 @@ body {
 
 .site-title {
   margin: 0;
-  font-size: 32px;
-  font-weight: 700;
+  font-size: 28px;
+  font-weight: 600;
   line-height: 1;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.03em;
 }
 
 .brand {
@@ -105,8 +113,8 @@ body {
   padding: 0;
   list-style: none;
   counter-reset: steps;
-  font-size: clamp(26px, 3.6vw, 40px);
-  line-height: 1.24;
+  font-size: clamp(22px, 2.6vw, 32px);
+  line-height: 1.4;
   letter-spacing: -0.01em;
 }
 
@@ -123,14 +131,14 @@ body {
 }
 
 .steps__item p {
-  max-width: 35ch;
+  max-width: 42ch;
   margin: 0;
   text-wrap: pretty;
 }
 
 @media (min-width: 768px) {
   .site-title {
-    font-size: 36px;
+    font-size: 32px;
   }
 
   .brand__logo {
