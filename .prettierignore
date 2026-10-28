@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.cache/
+.wrangler/
+package-lock.json
+assets/source/
+public/fonts/
+public/*.png
+public/*.webp
+public/*.ico
