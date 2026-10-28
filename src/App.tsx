@@ -30,6 +30,8 @@ export default function App() {
           <a
             className="social-link"
             href="https://x.com/shreddotart"
+            target="_blank"
+            rel="noopener noreferrer"
             aria-label="@shreddotart on X"
           >
             <svg
