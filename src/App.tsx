@@ -1,8 +1,9 @@
 const steps = [
-  "an artist sends something in a letter",
-  "it gets automatically scanned and listed for an eth auction",
-  "the highest bidder gets an nft",
-  "if the buyer enters an address, the letter gets forwarded to them. otherwise, it gets shredded after 30 days, along with the nft.",
+  "an artist sends something in a letter ✉️",
+  "it gets automatically scanned and listed for an eth auction 🖼️",
+  "the highest bidder gets an nft 🤝",
+  "if the buyer enters an address, the letter gets forwarded to them 📬",
+  "otherwise, it gets shredded after 30 days, along with the nft 🔪",
 ];
 
 export default function App() {
