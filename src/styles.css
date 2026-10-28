@@ -78,9 +78,6 @@ body {
   gap: 9px;
   color: inherit;
   text-decoration: none;
-  transition:
-    opacity 160ms ease,
-    transform 160ms ease;
 }
 
 .brand:focus-visible {
@@ -118,7 +115,6 @@ body {
   grid-template-columns: 1.15em minmax(0, 1fr);
   gap: clamp(12px, 2vw, 22px);
   counter-increment: steps;
-  animation: arrive 420ms ease-out both;
 }
 
 .steps__item::before {
@@ -132,30 +128,6 @@ body {
   text-wrap: pretty;
 }
 
-.steps__item:nth-child(2) {
-  animation-delay: 45ms;
-}
-
-.steps__item:nth-child(3) {
-  animation-delay: 90ms;
-}
-
-.steps__item:nth-child(4) {
-  animation-delay: 135ms;
-}
-
-@keyframes arrive {
-  from {
-    opacity: 0;
-    transform: translateY(7px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 @media (min-width: 768px) {
   .site-title {
     font-size: 36px;
@@ -167,31 +139,10 @@ body {
   }
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .brand:hover {
-    opacity: 0.76;
-    transform: translateY(-1px);
-  }
-}
-
 @supports not (
   (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))
 ) {
   .site-header {
     background: var(--page-background);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .brand {
-    transition: none;
-  }
-
-  .brand:hover {
-    transform: none;
-  }
-
-  .steps__item {
-    animation: none;
   }
 }
