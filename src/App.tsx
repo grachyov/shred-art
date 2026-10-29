@@ -4,7 +4,7 @@ const steps = [
   "send us something in a letter.",
   "we scan and list it for auction on ethereum.",
   "the winner gets an nft, and the author gets 77%.",
-  "if the buyer shares an address, we forward them the letter.",
+  "if the winner adds an address, we forward them the letter.",
   "otherwise, we shred it after 30 days, along with the nft.",
 ];
 
