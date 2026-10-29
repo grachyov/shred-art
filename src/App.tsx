@@ -1,7 +1,7 @@
 import PostalAddress from "./PostalAddress";
 
 const steps = [
-  "mail us something in a letter.",
+  "send us something in a letter.",
   "we scan and list it for auction on ethereum.",
   "the winner gets an nft, and the author gets 77%.",
   "if the buyer shares an address, we forward them the letter.",
